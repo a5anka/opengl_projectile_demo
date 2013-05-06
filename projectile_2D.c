@@ -66,9 +66,38 @@ void display()
    glPushMatrix();
    {
       glTranslatef(xCoordinate, yCoordinate, 0.0);
-      glutWireSphere(20, 100, 2);   /* draw the ball */
+      glutWireSphere(10, 100, 2);   /* draw the ball */
    }
    glPopMatrix();
+
+   glPushMatrix();
+   {
+      glColor3f(0.0, 0.0, 1.0);
+
+      glBegin(GL_LINES);
+      // Y axis
+      glVertex2f(0.0, 0.0);
+      glVertex2f(0.0, 280.0);
+      // X axis
+      glVertex2f(0.0, 0.0);
+      glVertex2f( 570.0, 0.0);
+
+      // Y arrow head
+      glVertex2f(0.0, 280.0);
+      glVertex2f(10.0, 270.0);
+      glVertex2f(0.0, 280.0);
+      glVertex2f(-10.0, 270.0);
+
+      // X arrow head
+      glVertex2f( 570.0, 0.0);
+      glVertex2f( 560.0, 10.0);
+      glVertex2f( 570.0, 0.0);
+      glVertex2f( 560.0, -10.0);
+
+      glEnd();
+   }
+   glPopMatrix();
+
 
    glPushMatrix();
    {
